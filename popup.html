@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Keybinds</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="border-glow"></div>
+    <img class="intro-logo" src="logo.png" alt="Keybinds" />
+
+    <div class="main-content">
+      <div class="header-container">
+        <div class="header-left"><h4>KEYBINDS</h4></div>
+        <div class="header-right">v5 Sync</div>
+      </div>
+
+      <p class="conflict-warning" id="conflictWarning"></p>
+
+      <div id="scrollArea" class="scroll-area">
+        <div class="row" id="conveyorRow">
+          <label class="switch">
+            <input type="checkbox" id="conveyorSwitch" />
+            <span class="slider"></span>
+          </label>
+          <div class="row-text">
+            <strong>Extension On/Off</strong>
+            <span class="row-desc">Master switch for all keybinds. When off, every key behaves as pressed. Use this when typing in chat.</span>
+          </div>
+          <button id="conveyorKeyBtn" class="key-btn">Ctrl + K</button>
+        </div>
+
+        <div class="reminder">
+          <div class="title">Setup Required</div>
+          <div class="description">Reset your in-game keybinds to their defaults before using this extension.</div>
+        </div>
+
+        <div id="keybindList"></div>
+
+        <div class="scroll-footer">
+          <button id="resetBtn" class="reset-btn">Reset To Default</button>
+          <p class="reset-hint">Restores every binding above to its default.</p>
+          <p class="status-msg" id="status"></p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <button id="guideBtn" class="guide-link" type="button"><span class="guide-q">?</span>Guide</button>
+        <span class="footer-badge">axionified</span>
+      </div>
+    </div>
+
+    <div id="guidePanel" class="guide-panel" aria-hidden="true">
+      <div class="guide-header">
+        <h4>Quick Guide</h4>
+        <button id="guideCloseBtn" class="guide-close" type="button" aria-label="Close guide">×</button>
+      </div>
+
+      <div class="guide-body">
+        <div class="guide-step">
+          <div class="guide-num">1</div>
+          <div class="guide-text">
+            <strong>Initial setup</strong>
+            <p>On repuls.io, open Settings → Controls and select <em>Reset To Default</em>. This is a one-time step. After that, manage all keybinds from this extension rather than the game's own menu.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="guide-num">2</div>
+          <div class="guide-text">
+            <strong>Rebinding a key</strong>
+            <p>Select the key box beside an action, then press the key you want to assign. Changes save automatically. Press <em>Esc</em> to cancel.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="guide-num">3</div>
+          <div class="guide-text">
+            <strong>Extension On/Off (Ctrl + K)</strong>
+            <p>Use this master switch to pause all keybinds, for example when typing in chat. While off, every key behaves as normal. Disabling it also releases any open scope, sprint, or fire input so nothing remains stuck. Press the shortcut again to re-enable.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="guide-num">4</div>
+          <div class="guide-text">
+            <strong>Hold and Toggle modes</strong>
+            <p>The game's sprint is hold-to-sprint and its scope is click-to-toggle. This extension adds the missing mode for each, so you get both. <em>Sprint toggle</em> holds sprint for you until you press the key again. <em>Scope hold</em> opens the scope when you press the key and closes it when you let go. Fire behaves like holding left-click. Hold and toggle can be used together on different keys, and each can be switched on or off.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="guide-num">5</div>
+          <div class="guide-text">
+            <strong>Key conflict warning</strong>
+            <p>A key that is already in use is not accepted. The key box turns red and shakes, and your previous key stays in place. Pick a different key, or reopen the extension to clear the warning.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="guide-num">6</div>
+          <div class="guide-text">
+            <strong>Troubleshooting</strong>
+            <p>Confirm that Extension On/Off is enabled and that the in-game keybinds are set to default. After installing or updating the extension, reload the game tab. <em>Reset To Default</em> restores all bindings.</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="guideDoneBtn" class="reset-btn guide-done" type="button">Close</button>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
