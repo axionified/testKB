@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "RepulsKB",
+  "version": "5",
+  "version_name": "v5 Sync",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "128": "logo.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "RepulsKB",
+    "default_icon": {
+      "128": "logo.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://repuls.io/*",
+        "*://*.repuls.io/*"
+      ],
+      "js": [
+        "common.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
